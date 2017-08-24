@@ -3,4 +3,16 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="black_loading">#221F1F</color>
+    <color name="whiteText">#F3F3F3</color>
+    <color name="colorBlack">#686363</color>
+    <color name="white">#f3f3f3</color>
+    <color name="white_pressed">#FFCFCFCF</color>
+    <color name="transBlack">#55000000</color>
+    <color name="editor_pick_bg">#FFECE9</color>
+    <color name="bgBlack">#373737</color>
+    <color name="link_color">#98b5bc</color>
+    <color name="bgBottom">#EE8888</color>
+    <color name="bgMid">#ffd966</color>
+    <color name="bg_total">#2B4E5C</color>
 </resources>
