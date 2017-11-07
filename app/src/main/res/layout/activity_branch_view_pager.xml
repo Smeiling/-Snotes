@@ -64,23 +64,67 @@
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:background="#fff"
-            android:orientation="vertical">
+            android:background="@color/pure_white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/ico_brunch_v8" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DrawerLayout抽屉效果" />
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/brunch_slogan"
+                android:textColor="@color/bgBlack"
+                android:textStyle="italic" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="文本" />
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/brunch_slogan_author"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="italic" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="按钮" />
+                android:layout_width="120dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/round_corner_button"
+                android:text="@string/label_start_brunch"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp" />
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner_button"
+                android:text="@string/label_author_apply"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp" />
+
+            <include layout="@layout/brunch_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></LinearLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/icon_setting" />
+
         </LinearLayout>
 
     </android.support.v4.widget.DrawerLayout>

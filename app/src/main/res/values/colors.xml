@@ -23,4 +23,6 @@
     <color name="bgMid">#ffd966</color>
     <color name="bg_total">#2B4E5C</color>
 
+    <color name="pure_white">#FFFFFF</color>
+
 </resources>

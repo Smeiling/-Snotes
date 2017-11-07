@@ -11,4 +11,8 @@
     <string name="label_theme">我是主题</string>
     <string name="label_author">by </string>
     <string name="brunch_rec">Brunch recommaned</string>
+    <string name="brunch_slogan">You can make anything\nby writing</string>
+    <string name="brunch_slogan_author">- C.S.Lewis -</string>
+    <string name="label_start_brunch">Start brunch</string>
+    <string name="label_author_apply">Author apply</string>
 </resources>
