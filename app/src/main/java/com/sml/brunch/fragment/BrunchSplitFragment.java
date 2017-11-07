@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,11 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sml.brunch.R;
+
+
 /**
  * Created by songmeiling on 2017/8/8.
  */
 
-public class BranchSplitFragment extends Fragment {
+public class BrunchSplitFragment extends Fragment {
 
     @Nullable
     @Override

@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/branch_rec"
+                android:text="@string/brunch_rec"
                 android:textColor="@color/white" />
 
             <View

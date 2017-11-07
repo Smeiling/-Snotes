@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch;
 
 import org.junit.Test;
 

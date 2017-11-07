@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by songmeiling on 2017/8/3.
  */
 
-public class BranchViewPagerAdapter extends PagerAdapter implements ViewPager.OnPageChangeListener {
+public class BrunchViewPagerAdapter extends PagerAdapter implements ViewPager.OnPageChangeListener {
     public static final int FLING_MIN_DISTANCE = 20;
     private List<Integer> list;
     private Context context;
@@ -24,7 +24,7 @@ public class BranchViewPagerAdapter extends PagerAdapter implements ViewPager.On
     private int mPosition = 0;
     private List<View> views;
 
-    public BranchViewPagerAdapter(Context context, List<Integer> list) {
+    public BrunchViewPagerAdapter(Context context, List<Integer> list) {
         this.context = context;
         this.list = list;
     }

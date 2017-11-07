@@ -1,4 +1,4 @@
-package com.smeiling.snotes.model;
+package com.sml.brunch.model;
 
 import java.io.Serializable;
 

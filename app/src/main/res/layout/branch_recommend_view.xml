@@ -40,8 +40,8 @@
                 android:gravity="bottom"
                 android:minLines="2"
                 android:padding="10dp"
-                android:text="@string/branch_recommand"
-                android:textColor="@color/white"
+                android:text="@string/brunch_recommand"
+                android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:textStyle="italic" />
 
@@ -52,15 +52,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <android.support.v7.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="2"
                 android:text="@string/article_title"
-                android:textColor="@color/white"
+                android:textColor="#FFFFFF"
                 android:textSize="24dp" />
 
-            <TextView
+            <android.support.v7.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -68,7 +68,7 @@
                 android:maxLines="4"
                 android:minLines="4"
                 android:text="@string/article_content"
-                android:textColor="@color/white" />
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,11 +76,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp">
 
-            <TextView
+            <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_by"
-                android:textColor="@color/white"
+                android:textColor="#FFFFFF"
                 android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>

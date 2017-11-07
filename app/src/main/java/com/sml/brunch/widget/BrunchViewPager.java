@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,35 +7,37 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.sml.brunch.R;
+
 /**
  * Created by songmeiling on 2017/8/3.
  */
 
-public class BranchViewPager extends ViewPager {
+public class BrunchViewPager extends ViewPager {
 
 
     private boolean isVertical = false;
 
-    public BranchViewPager(Context context) {
+    public BrunchViewPager(Context context) {
         super(context);
         init();
     }
 
-    public BranchViewPager(Context context, AttributeSet attrs) {
+    public BrunchViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(attrs, 0);
         init();
     }
 
-    public BranchViewPager(Context context, AttributeSet attrs, int defStyle) {
+    public BrunchViewPager(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
         initAttrs(attrs, defStyle);
         init();
     }
 
     private void initAttrs(AttributeSet attrs, int defStyle) {
-        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.BranchViewPager, defStyle, 0);
-        isVertical = a.getBoolean(R.styleable.BranchViewPager_isVertical, false);
+        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.BrunchViewPager, defStyle, 0);
+        isVertical = a.getBoolean(R.styleable.BrunchViewPager_isVertical, false);
         a.recycle();
     }
 

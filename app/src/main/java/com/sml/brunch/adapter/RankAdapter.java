@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.smeiling.snotes.model.Article;
+import com.sml.brunch.R;
+import com.sml.brunch.model.Article;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.smeiling.snotes;
+package com.sml.brunch.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,14 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.smeiling.snotes.model.Article;
+import com.sml.brunch.R;
+import com.sml.brunch.adapter.RankAdapter;
+import com.sml.brunch.model.Article;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by songmeiling on 2017/8/7.
@@ -24,11 +22,7 @@ import butterknife.Unbinder;
 
 public class RankListFragment extends Fragment {
 
-
-    Unbinder unbinder;
-    @BindView(R.id.tv_current_hot)
     TextView tvCurrentHot;
-    @BindView(R.id.lv_rank)
     ListView lvRank;
     private List<Article> articleList;
 
@@ -36,17 +30,19 @@ public class RankListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.rank_list_view, null);
-        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        tvCurrentHot = getView().findViewById(R.id.tv_current_hot);
+        lvRank = getView().findViewById(R.id.lv_rank);
+
         initTestData();
         if (articleList != null) {
             RankAdapter adapter = new RankAdapter(getContext(), articleList);
-            //lvRank.setAdapter(adapter);
+            lvRank.setAdapter(adapter);
         }
     }
 
@@ -65,6 +61,5 @@ public class RankListFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
 }
