@@ -13,7 +13,7 @@ import com.sml.brunch.R;
  * Created by songmeiling on 2017/8/7.
  */
 
-public class BrunchPickedFragment extends Fragment {
+public class HalfBackgroundFragment extends Fragment {
 
     @Nullable
     @Override

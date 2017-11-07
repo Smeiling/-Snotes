@@ -13,31 +13,31 @@ import com.sml.brunch.R;
  * Created by songmeiling on 2017/8/3.
  */
 
-public class BrunchViewPager extends ViewPager {
+public class HorizontalViewPager extends ViewPager {
 
 
     private boolean isVertical = false;
 
-    public BrunchViewPager(Context context) {
+    public HorizontalViewPager(Context context) {
         super(context);
         init();
     }
 
-    public BrunchViewPager(Context context, AttributeSet attrs) {
+    public HorizontalViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(attrs, 0);
         init();
     }
 
-    public BrunchViewPager(Context context, AttributeSet attrs, int defStyle) {
+    public HorizontalViewPager(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
         initAttrs(attrs, defStyle);
         init();
     }
 
     private void initAttrs(AttributeSet attrs, int defStyle) {
-        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.BrunchViewPager, defStyle, 0);
-        isVertical = a.getBoolean(R.styleable.BrunchViewPager_isVertical, false);
+        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.HorizontalViewPager, defStyle, 0);
+        isVertical = a.getBoolean(R.styleable.HorizontalViewPager_isVertical, false);
         a.recycle();
     }
 

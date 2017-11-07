@@ -14,7 +14,7 @@ import com.sml.brunch.R;
  * Created by songmeiling on 2017/8/4.
  */
 
-public class BrunchRecommendFragment extends Fragment {
+public class FullBackgroundFragment extends Fragment {
 
     @Nullable
     @Override
