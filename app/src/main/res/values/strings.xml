@@ -15,4 +15,13 @@
     <string name="brunch_slogan_author">- C.S.Lewis -</string>
     <string name="label_start_brunch">Start brunch</string>
     <string name="label_author_apply">Author apply</string>
+    <string name="label_input_search_text">请输入搜索内容</string>
+    <string name="label_article">文章</string>
+    <string name="label_keyword">关键字</string>
+    <string name="label_magazine">杂志</string>
+    <string name="label_authors">作家</string>
+    <string name="label_login">账号登陆</string>
+    <string name="string_please_input_email">Please input your email address</string>
+    <string name="string_please_input_password">Please input your password</string>
+    <string name="string_register_new_account">Do not have an account?</string>
 </resources>

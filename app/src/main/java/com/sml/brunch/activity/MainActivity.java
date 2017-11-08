@@ -1,5 +1,6 @@
 package com.sml.brunch.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout = null;
     private ImageView ivMenu;
+    private ImageView ivSearch;
+    private Button btnLogin;
+    private Button btnApply;
     private HorizontalViewPager viewPager;
 
     @Override
@@ -44,6 +48,23 @@ public class MainActivity extends AppCompatActivity {
                 mDrawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+
+        ivSearch = findViewById(R.id.iv_search);
+        ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
+            }
+        });
+
+        btnLogin = findViewById(R.id.btn_login);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
         mDrawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
             /**
              * 当抽屉滑动状态改变的时候被调用

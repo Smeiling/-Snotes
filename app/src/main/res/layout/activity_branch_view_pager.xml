@@ -53,6 +53,7 @@
                     android:textColor="@color/white" />
 
                 <ImageView
+                    android:id="@+id/iv_search"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:padding="15dp"
@@ -100,6 +101,7 @@
                 android:layout_marginTop="25dp"
                 android:background="@drawable/round_corner_button"
                 android:text="@string/label_start_brunch"
+                android:id="@+id/btn_login"
                 android:textColor="@color/colorBlack"
                 android:textSize="10dp" />
 
@@ -110,6 +112,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/round_corner_button"
                 android:text="@string/label_author_apply"
+                android:id="@+id/btn_apply"
                 android:textColor="@color/colorBlack"
                 android:textSize="10dp" />
 
