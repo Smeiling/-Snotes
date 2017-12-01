@@ -41,6 +41,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="2"
@@ -49,6 +50,7 @@
                 android:textSize="24dp" />
 
             <TextView
+                android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -67,7 +69,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
                 android:text="@string/label_by"
+                android:textColor="@color/colorBlack"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author"
                 android:textColor="@color/colorBlack"
                 android:textStyle="italic" />
         </LinearLayout>

@@ -1,6 +1,8 @@
 package com.sml.brunch.activity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -19,19 +21,26 @@ import com.sml.brunch.fragment.FullBackgroundFragment;
 import com.sml.brunch.fragment.HalfBackgroundFragment;
 import com.sml.brunch.fragment.RankListFragment;
 import com.sml.brunch.widget.HorizontalViewPager;
+import com.zhihu.matisse.Matisse;
+import com.zhihu.matisse.MimeType;
+import com.zhihu.matisse.engine.impl.GlideEngine;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int REQUEST_CODE_CHOOSE = 1001;
 
     private DrawerLayout mDrawerLayout = null;
     private ImageView ivMenu;
     private ImageView ivSearch;
     private Button btnLogin;
     private Button btnApply;
+    private ImageView ivAvatar;
     private HorizontalViewPager viewPager;
+
+    private List<Uri> mSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +71,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
+        ivAvatar = findViewById(R.id.ivAvatar);
+        ivAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Matisse.from(MainActivity.this)
+                        .choose(MimeType.allOf())
+                        .countable(true)
+                        .maxSelectable(9)
+                        .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
+                        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                        .thumbnailScale(0.85f)
+                        .imageEngine(new GlideEngine())
+                        .forResult(REQUEST_CODE_CHOOSE);
             }
         });
 
@@ -103,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button button = (Button) findViewById(R.id.buttonPanel);
-        viewPager = (HorizontalViewPager) findViewById(R.id.viewpager);
+        Button button = findViewById(R.id.buttonPanel);
+        viewPager = findViewById(R.id.viewpager);
         assert viewPager != null;
         viewPager.setPageMargin(80);
         viewPager.setOffscreenPageLimit(3);
@@ -163,6 +188,15 @@ public class MainActivity extends AppCompatActivity {
             if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
                 mDrawerLayout.closeDrawers();
             } else super.onBackPressed();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
+            mSelected = Matisse.obtainResult(data);
+            Log.d("Matisse", "mSelected: " + mSelected);
         }
     }
 }

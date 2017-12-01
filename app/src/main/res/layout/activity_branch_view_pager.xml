@@ -72,6 +72,7 @@
 
 
             <ImageView
+                android:id="@+id/ivAvatar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@mipmap/ico_brunch_v8" />

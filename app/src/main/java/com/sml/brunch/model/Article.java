@@ -13,6 +13,7 @@ public class Article implements Serializable {
     private String theme;
     private String author;
     private String date;
+    private String level;
 
     public String getImgUrl() {
         return imgUrl;
@@ -62,5 +63,13 @@ public class Article implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }
