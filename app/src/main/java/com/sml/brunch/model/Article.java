@@ -13,7 +13,7 @@ public class Article implements Serializable {
     private String theme;
     private String author;
     private String date;
-    private String level;
+    private int type;
 
     public String getImgUrl() {
         return imgUrl;
@@ -65,11 +65,11 @@ public class Article implements Serializable {
         this.date = date;
     }
 
-    public String getLevel() {
-        return level;
+    public int getType() {
+        return type;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setType(int type) {
+        this.type = type;
     }
 }

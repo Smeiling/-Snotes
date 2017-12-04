@@ -12,7 +12,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.avos.avoscloud.AVUser;
 import com.sml.brunch.R;
 import com.sml.brunch.adapter.BrunchViewPagerAdapter;
 import com.sml.brunch.adapter.FragmentAdapter;
@@ -20,6 +22,9 @@ import com.sml.brunch.fragment.BrunchSplitFragment;
 import com.sml.brunch.fragment.FullBackgroundFragment;
 import com.sml.brunch.fragment.HalfBackgroundFragment;
 import com.sml.brunch.fragment.RankListFragment;
+import com.sml.brunch.model.Article;
+import com.sml.brunch.model.BrunchViewModel;
+import com.sml.brunch.util.ConstUtils;
 import com.sml.brunch.widget.HorizontalViewPager;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
@@ -46,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_branch_view_pager);
+
+        if (AVUser.getCurrentUser() != null) {
+            Toast.makeText(this, AVUser.getCurrentUser().getUsername(), Toast.LENGTH_SHORT).show();
+        }
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
@@ -127,8 +136,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        Button button = findViewById(R.id.buttonPanel);
         viewPager = findViewById(R.id.viewpager);
         assert viewPager != null;
         viewPager.setPageMargin(80);
@@ -152,34 +159,42 @@ public class MainActivity extends AppCompatActivity {
         FragmentAdapter adapter1 = new FragmentAdapter(getSupportFragmentManager(), fragments);
 
         viewPager.setAdapter(adapter1);
-        viewPager.addOnPageChangeListener(adapter);
+        //viewPager.addOnPageChangeListener(adapter);
 
-        adapter.setOnTouchListener(new BrunchViewPagerAdapter.OnTouchListener() {
-            @Override
-            public void onVerticalFling(int offsetPosition) {
-                viewPager.setVertical(true);
-                viewPager.setCurrentItem(adapter.getPosition() + offsetPosition);
-                Log.d("sml", "onVerticalFling position = " + offsetPosition);
-            }
+//        adapter.setOnTouchListener(new BrunchViewPagerAdapter.OnTouchListener() {
+//            @Override
+//            public void onVerticalFling(int offsetPosition) {
+//                viewPager.setVertical(true);
+//                viewPager.setCurrentItem(adapter.getPosition() + offsetPosition);
+//                Log.d("sml", "onVerticalFling position = " + offsetPosition);
+//            }
+//
+//            @Override
+//            public void onHorizontalFling(int offsetPosition) {
+//                viewPager.setVertical(false);
+//                viewPager.setCurrentItem(adapter.getPosition() + offsetPosition);
+//                Log.d("sml", "onHorizontalFling position = " + offsetPosition);
+//            }
+//        });
 
-            @Override
-            public void onHorizontalFling(int offsetPosition) {
-                viewPager.setVertical(false);
-                viewPager.setCurrentItem(adapter.getPosition() + offsetPosition);
-                Log.d("sml", "onHorizontalFling position = " + offsetPosition);
-            }
-        });
-
-        assert button != null;
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setVertical(!viewPager.isVertical());
-                adapter.notifyDataSetChanged();
-            }
-        });
     }
 
+
+    private void initDatas() {
+        List<Article> articles = new ArrayList<>();
+        List<BrunchViewModel> brunches;
+        BrunchViewModel brunch;
+        if (articles != null && articles.size() > 0) {
+            brunches = new ArrayList<>();
+        }
+        for (Article article : articles) {
+            if (article.getType() == ConstUtils.BRUNCH_TYPE_BIG) {
+                brunch = new BrunchViewModel();
+                brunch.setViewType(ConstUtils.BRUNCH_TYPE_BIG);
+            }
+        }
+
+    }
 
     @Override
     public void onBackPressed() {

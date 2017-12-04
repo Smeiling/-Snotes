@@ -1,5 +1,6 @@
 package com.sml.brunch.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ivConfirm = findViewById(R.id.iv_check);
         ivBack.setOnClickListener(this);
         ivConfirm.setOnClickListener(this);
+        findViewById(R.id.go_register).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
     }
 
     @Override

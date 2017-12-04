@@ -23,6 +23,7 @@
                 android:src="@mipmap/icon_back" />
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -70,6 +71,7 @@
                 android:src="@mipmap/icon_email" />
 
             <EditText
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -96,6 +98,36 @@
                 android:src="@mipmap/icon_lock" />
 
             <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/string_please_input_password"
+                android:inputType="textPassword"
+                android:paddingLeft="4dp"
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ensure_password"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/pure_white"
+            android:padding="4dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                android:padding="12dp"
+                android:src="@mipmap/icon_lock" />
+
+            <EditText
+                android:id="@+id/et_repassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -109,6 +141,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/go_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

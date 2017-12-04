@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.sml.brunch.model.Article;
+
 import java.util.List;
 
 /**
@@ -23,6 +25,8 @@ public class BrunchViewPagerAdapter extends PagerAdapter implements ViewPager.On
     private OnTouchListener mOnTouchListener;
     private int mPosition = 0;
     private List<View> views;
+
+    private List<Article> articles;
 
     public BrunchViewPagerAdapter(Context context, List<Integer> list) {
         this.context = context;
